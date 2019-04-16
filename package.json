@@ -1,0 +1,27 @@
+{
+  "name": "gatsby-plugin-global-styles",
+  "version": "1.0.0",
+  "description": "A Gatsby plugin for creating independent global styles with minimal configuration.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/magnusriga/gatsby-plugin-global-styles.git"
+  },
+  "keywords": [
+    "gatsby-plugin-global-styles",
+    "gatsby",
+    "plugin",
+    "css",
+    "global",
+    "styles"
+  ],
+  "author": "Magnus Rinnan Gaarder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magnusriga/gatsby-plugin-global-styles/issues"
+  },
+  "homepage": "https://github.com/magnusriga/gatsby-plugin-global-styles#readme"
+}
