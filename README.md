@@ -10,13 +10,15 @@ The plugin does not rely on any other packages.
 
 ## Why to use
 
-It might be desirable to use more than one styling method for your Gatsby site. For instance, your site might be using `styled-components`, `typography.js` and `Material-UI`. If you want to add your own global styling to this, it is important that the order of the styles in the `<head>` element is correct. The order of style tags in `<head>` is important, as the lower style tags overwrite those above it.
+It might be desirable to use more than one styling method for your Gatsby site. For instance, your site might be using `styled-components`, `typography.js` and `Material-UI`. If you want to add your own **global** styling to this mix, it is important that the order of the `style` tags in the website's `<head>` element is correct. The order of `style` tags in `<head>` is important, as properties in the lower `style` tags overwrite the same properties in `style` tags above it. In effect, the lower `style` tags take priority.
 
-`gatsby-plugin-global-styles` allow you to create your own global styles, including styles such as `reset`, `normalize`, etc., and make sure those global styles end up where you want them in the `<head>` element. By default, the global styles created with this plugin end up at the top of `<head>`, only with `typography.js` above it (if installed).
+`gatsby-plugin-global-styles` allows you to combine your own style files into one collective global style tag, and make sure that global style ends up where you want them to be in the `<head>` element. By default, the global style tag created with this plugin end up at the top of `<head>`, only with `typography.js` above it (if installed).
 
-By using `gatsby-plugin-typography` and specifying the path to your `GlobalStyleComponent.js` file via the `pathToConfigModule` option (see below), the inclusion of your global styles is taken care of by helper methods under the hood, letting you compile your global styles in a single location.
+As inspiration, a global style could for instance include your own personal global style sheet with style sheets such as `reset`, `normalize`, etc.
 
-It is also possible to pass in props, like a theme, to the global styles. See below for instructions.
+By using `gatsby-plugin-typography` and specifying the path to your `GlobalStyleComponent.js` file via the `pathToConfigModule` option (see below), the compilation and injection of your global styles is taken care of by helper methods under the hood.
+
+Lastly, it is also possible to pass in props, like a theme, to global styles using this plugin. See below for instructions.
 
 ## How to use
 
@@ -53,7 +55,7 @@ export default GlobalStyleComponent;
 
 Here, `reset` and `globalStyle` are two JavaScript files that each contain their own global styles that we want to compile into one global style element.
 
-In `src/styles/globalStyle`:
+As an example, in `src/styles/globalStyle`:
 
 ```javascript
 import { css } from 'gatsby-plugin-global-styles';
@@ -70,6 +72,10 @@ const globalStyles = css`
 
 export default globalStyles;
 ```
+
+## Options
+
+- `pathToConfigModule`: (string) The path to the file in which you export your global style component.
 
 ## How to use props (like theme) in a global styles file
 
@@ -130,8 +136,10 @@ export const onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) =>
 
 ## Full example
 
-A full example, including `gatsby-plugin-global-styles`, `typography.js`, `Material-UI` and `styled-components` can be found in the starter: `gatsby-starter-global-styles`
+A full example, including `gatsby-plugin-global-styles`, `typography.js`, `Material-UI` and `styled-components` can be found in the starter: `gatsby-starter-global-styles`.
 
-## Options
+## Syntax highlighting
 
-- `pathToConfigModule`: (string) The path to the file in which you export your global style component.
+It is easy to add syntax highlighting. See the [styled-components docs](https://www.styled-components.com/docs/tooling#syntax-highlighting) for extensions that enable this in various IDEs.
+
+For `Visual Studio Code`, the [Babel JavaScript](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel) plugin is one option that works well.
