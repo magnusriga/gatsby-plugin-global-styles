@@ -1,5 +1,7 @@
 # gatsby-plugin-global-styles
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/magnusriga/gatsby-plugin-global-styles.svg)](https://greenkeeper.io/)
+
 A Gatsby plugin for creating independent global CSS styles with minimal configuration.
 
 The plugin does not rely on any other packages.
